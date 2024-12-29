@@ -1,0 +1,1140 @@
+/* Reset ve genel stiller */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.app {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.taxi-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #ffc107;
+}
+
+.logo h1 {
+  color: #ffc107;
+  font-size: 1.8rem;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #ffc107;
+}
+
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.menu-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+  color: #333;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.menu-button:hover .menu-icon {
+  color: #ffc107;
+  transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-content {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 1rem;
+  opacity: 1;
+  animation: fadeEffect 0.5s ease-in-out;
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0.4;
+    transform: scale(1.02);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 1rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: all 0.3s;
+  z-index: 10;
+}
+
+.carousel-button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-button.prev {
+  left: 1rem;
+}
+
+.carousel-button.next {
+  right: 1rem;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s;
+}
+
+.carousel-dot.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+.hero-content {
+  max-width: 800px;
+  z-index: 1;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.cta-button {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  background-color: #ffc107;
+  border: none;
+  border-radius: 5px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #ffb300;
+}
+
+/* Services Section */
+.services {
+  padding: 5rem 0;
+  text-align: center;
+  background-color: #f5f5f5;
+  width: 100vw;
+}
+
+.services h2 {
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.service-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+  background-color: #f0f0f0;
+  position: relative;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  transition: transform 0.3s ease-in-out;
+}
+
+.service-image img.loaded {
+  opacity: 1;
+}
+
+.service-image img.loaded + ::before {
+  display: none;
+}
+
+.service-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  opacity: 0;
+}
+
+.service-card:hover .service-image img {
+  transform: scale(1.05);
+}
+
+.service-card h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  width: 100%;
+}
+
+.service-card p {
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  width: 100%;
+}
+
+.service-features {
+  list-style: none;
+  width: 100%;
+  padding: 0;
+}
+
+.service-features li {
+  color: #555;
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+/* Contact Section */
+.contact {
+  padding: 5rem 0;
+  text-align: center;
+  background-color: white;
+  width: 100vw;
+}
+
+.contact h2 {
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.contact-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.contact-item h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #ffc107;
+  padding-bottom: 0.5rem;
+}
+
+.contact-item p {
+  margin: 0.7rem 0;
+  font-size: 1rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-icons {
+  display: flex;
+  gap: 1rem;
+  margin-right: 1rem;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.icon-button:hover {
+  transform: scale(1.1);
+}
+
+.contact-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #333;
+}
+
+.contact-icon.whatsapp {
+  color: #25D366;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-link {
+  color: white;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+}
+
+/* Sosyal medya platform renkleri */
+.social-link.facebook:hover {
+  color: #1877f2; /* Facebook mavisi */
+}
+
+.social-link.instagram:hover {
+  color: #e4405f; /* Instagram kırmızısı */
+}
+
+.social-link.twitter:hover {
+  color: #1da1f2; /* Twitter mavisi */
+}
+
+.social-link.youtube:hover {
+  color: #ff0000; /* YouTube kırmızısı */
+}
+
+.social-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 5rem 0;
+  text-align: center;
+  background-color: white;
+  width: 100vw;
+}
+
+.testimonials h2 {
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+.testimonial-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 1rem;
+  background-color: #f0f0f0;
+  position: relative;
+}
+
+.testimonial-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 50%;
+}
+
+.testimonial-image img.loaded {
+  opacity: 1;
+}
+
+.testimonial-image img.loaded + ::before {
+  display: none;
+}
+
+.testimonial-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  opacity: 0;
+}
+
+.testimonial-card h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.stars {
+  color: #ffc107;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.testimonial-card p {
+  color: #666;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* Pricing Section */
+.pricing {
+  padding: 5rem 0;
+  text-align: center;
+  background-color: #f5f5f5;
+  width: 100vw;
+}
+
+.pricing h2 {
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.pricing-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-card.featured {
+  transform: scale(1.05);
+  border: 2px solid #ffc107;
+}
+
+.pricing-card.featured::before {
+  content: "En Popüler";
+  position: absolute;
+  top: 1.5rem;
+  right: -3rem;
+  background: #ffc107;
+  color: #333;
+  padding: 0.5rem 3rem;
+  transform: rotate(45deg);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+}
+
+.pricing-header {
+  margin-bottom: 2rem;
+}
+
+.pricing-header h3 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.amount {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.per {
+  color: #666;
+  font-size: 1rem;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  text-align: left;
+}
+
+.pricing-features li {
+  color: #555;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.pricing-features li:last-child {
+  border-bottom: none;
+}
+
+.pricing-cta {
+  margin-top: auto;
+  padding: 1rem;
+  font-size: 1.1rem;
+  background-color: #ffc107;
+  border: none;
+  border-radius: 5px;
+  color: #333;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.pricing-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #333;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.pricing-cta:hover {
+  color: #ffc107;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.pricing-cta:hover::before {
+  width: 100%;
+}
+
+/* Dark mode için buton stilleri */
+.dark-mode .pricing-cta::before {
+  background-color: #ffc107;
+}
+
+.dark-mode .pricing-cta:hover {
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .menu-button {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+
+  .nav.active {
+    display: block;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .nav a {
+    display: block;
+    padding: 0.8rem;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .nav a:hover {
+    background-color: #fff5e6;
+  }
+
+  .contact-icons {
+    margin-right: 3.5rem;
+  }
+
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 3%;
+  }
+
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+
+  .taxi-logo {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .service-cards, 
+  .testimonial-cards, 
+  .contact-info {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .contact-icons {
+    margin-right: 3rem;
+  }
+
+  .icon-button {
+    padding: 0.3rem;
+  }
+
+  .contact-icon {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+
+  .service-image {
+    height: 180px;
+  }
+  
+  .service-card {
+    padding: 1.5rem;
+  }
+  
+  .service-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .pricing-card.featured {
+    transform: none;
+  }
+  
+  .pricing-card {
+    padding: 1.5rem;
+  }
+  
+  .amount {
+    font-size: 2rem;
+  }
+
+  .carousel-button {
+    padding: 0.8rem 1.2rem;
+    font-size: 1.2rem;
+  }
+
+  .carousel-dots {
+    bottom: 1rem;
+  }
+
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.8rem 2%;
+  }
+
+  .logo h1 {
+    font-size: 1.3rem;
+  }
+
+  .taxi-logo {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-icons {
+    margin-right: 2.5rem;
+  }
+
+  .service-card,
+  .testimonial-card,
+  .contact-item {
+    padding: 1rem;
+  }
+
+  .service-image {
+    height: 160px;
+  }
+
+  .carousel-button {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+  }
+
+  .carousel-dots {
+    bottom: 0.8rem;
+  }
+
+  .carousel-dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.dark-mode .header {
+  background-color: #2d2d2d;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.dark-mode .nav a {
+  color: #fff;
+}
+
+.dark-mode .nav a:hover {
+  color: #ffc107;
+}
+
+.dark-mode .contact-icon {
+  color: #fff;
+}
+
+.dark-mode .service-card,
+.dark-mode .pricing-card,
+.dark-mode .testimonial-card,
+.dark-mode .contact-item {
+  background-color: #2d2d2d;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+}
+
+.dark-mode .service-card h3,
+.dark-mode .pricing-card h3,
+.dark-mode .testimonial-card h3,
+.dark-mode .contact-item h3 {
+  color: #fff;
+}
+
+.dark-mode .service-card p,
+.dark-mode .pricing-card p,
+.dark-mode .testimonial-card p,
+.dark-mode .contact-item p {
+  color: #ddd;
+}
+
+.dark-mode .service-features li,
+.dark-mode .pricing-features li {
+  color: #ddd;
+  border-bottom-color: #444;
+}
+
+.dark-mode .services,
+.dark-mode .pricing {
+  background-color: #1a1a1a;
+}
+
+.dark-mode .amount {
+  color: #fff;
+}
+
+.dark-mode .per {
+  color: #ddd;
+}
+
+.dark-mode .menu-button {
+  color: #fff;
+}
+
+.dark-mode .menu-button:hover {
+  color: #ffc107;
+}
+
+@media (max-width: 1024px) {
+  .dark-mode .nav {
+    background-color: #2d2d2d;
+  }
+
+  .dark-mode .nav a:hover {
+    background-color: #3d3d3d;
+  }
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Dark mode için testimonial buton stilleri */
+.dark-mode .testimonial-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.dark-mode .testimonial-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.service-cta {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background-color: transparent;
+  border: 2px solid #ffc107;
+  border-radius: 5px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.service-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #ffc107;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.service-cta:hover {
+  color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.service-cta:hover::before {
+  width: 100%;
+}
+
+/* Dark mode için buton stilleri */
+.dark-mode .service-cta {
+  color: #fff;
+  border-color: #ffc107;
+}
+
+.dark-mode .service-cta:hover {
+  color: #333;
+}
+
+/* Dark mode için menü ikonu stilleri */
+.dark-mode .menu-icon {
+  color: #fff;
+}
+
+.dark-mode .menu-button:hover .menu-icon {
+  color: #ffc107;
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.loading-logo {
+  width: 80px;
+  height: 80px;
+  animation: pulse 1.5s infinite;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #ffc107;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Dark mode için loading ekranı */
+.dark-mode .loading-screen {
+  background-color: #1a1a1a;
+}
+
+.dark-mode .loading-spinner {
+  border: 4px solid #333;
+  border-top: 4px solid #ffc107;
+}
+
+/* Lazy loading için placeholder stil */
+.service-image img,
+.testimonial-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  transition: transform 0.3s ease-in-out;
+}
+
+.service-image img.loaded,
+.testimonial-image img.loaded {
+  opacity: 1;
+}
+
+.service-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+  background-color: #f0f0f0;
+  position: relative;
+}
+
+.testimonial-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 1rem;
+  background-color: #f0f0f0;
+  position: relative;
+}
+
+.testimonial-image img {
+  border-radius: 50%;
+}
+
+/* Loading placeholder efekti */
+.service-image::before,
+.testimonial-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  opacity: 0;
+}
+
+.dark-mode .service-image::before,
+.dark-mode .testimonial-image::before {
+  background: linear-gradient(90deg, #2d2d2d 25%, #3d3d3d 50%, #2d2d2d 75%);
+}
